@@ -11,3 +11,5 @@ warnings
 pandas
 numpy
 matplotlib
+scikit-learn
+scipy

@@ -2,3 +2,4 @@ data/raw/*
 data/interim/dshf
 data/interim/preprocessed_filtered.csv
 data/interim/model-outputs/llm-mistral-10shots-*
+notebooks/wandb/*
