@@ -6,13 +6,16 @@
 
 # How to use
 
-### Preresquities
+The ParaNMT-500K (filtered) detoxification dataset was used and can be downloaded [here](https://github.com/skoltech-nlp/detox/releases/download/emnlp2021/filtered_paranmt.zip).
+
+### Preresquities and data preparaion
 
 ```bash
 pip install -r requirements.txt
+python src/data/make_dataset.py
 ```
 
-If you want reproduce Few-shot learning results with Mistral 7B:
+## Few-shot learning Mistral 7B
 
 1. [Download ollama](https://ollama.ai/download), then:
 
@@ -21,33 +24,29 @@ ollama serve
 ollama pull mistral
 ```
 
-## T5 fine-tuning on ParaNMT-500K detoxification dataset
+2. Use [LLM notebook](https://github.com/kilimanj4r0/text-detoxification/blob/main/notebooks/2.2-llm.ipynb).
+
+## Fine-tuning T5-base
+
+1. Download [model checkpoint](https://disk.yandex.ru/d/xPIno6SPXFL7dA) (2.28GB)
+2. Paste local path to checkpoint to `src/models/predict_model.py`, then:
 
 ```bash
 cd src
+python models/predict_model.py
 ```
 
-### Prepare data
+2. (Alternative) to train from scratch:
 
 ```bash
-python data/make_dataset.py
-```
-
-### Train model
-
-```bash
+cd src
 python models/train_model.py
-```
-
-### Predict
-
-```bash
 python models/predict_model.py
 ```
 
 ## Appendix
 
-### Visualisations
+### Reproduce visualisations
 
 ```bash
 python visualization/visualize.py
