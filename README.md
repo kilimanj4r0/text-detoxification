@@ -36,7 +36,7 @@ cd src
 python models/predict_model.py
 ```
 
-2. (Alternative) to train from scratch:
+2. (Alternative) To train the model from scratch:
 
 ```bash
 cd src
@@ -49,5 +49,6 @@ python models/predict_model.py
 ### Reproduce visualisations
 
 ```bash
+cd src
 python visualization/visualize.py
 ```
